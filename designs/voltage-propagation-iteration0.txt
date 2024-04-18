@@ -1,0 +1,104 @@
+### Performing voltage propagation analysis ###
+
+Detect which items are electrically connected together:
+
+  Connected group 0:
+    net GND
+    component pin U1.TEST_EN
+    component pin U1.GND[8]
+    component pin U1.GND[9]
+    component pin U1.GND[10]
+    component pin U1.GND[7]
+    component pin U1.GND[11]
+    component pin U1.GND[6]
+    component pin U1.GND[5]
+    component pin U1.GND[12]
+    component pin U1.GND[3]
+    component pin U1.GND[4]
+    component pin U1.GND[1]
+    component pin U1.GND[2]
+    component pin U1.GND[0]
+    component pin U1.GND[14]
+    component pin U1.GND[13]
+    component pin U1.GND[16]
+    component pin U1.GND[15]
+    component pin U1.GND[24]
+    component pin U1.GND[19]
+    component pin U1.GND[23]
+    component pin U1.GND[20]
+    component pin U1.GND[22]
+    component pin U1.GND[17]
+    component pin U1.GND[21]
+    component pin U1.GND[18]
+    component pin U1.GND[25]
+    component pin U1.GND[26]
+    component pin U1.GND[27]
+    component pin U1.GND[28]
+    component pin U1.GND[29]
+  
+### Starting Points ###
+
+Voltage propagation starts by searching for items that have a
+'.voltage' property of type 'Double' or 'Toleranced'.
+
+The following starting points were found:
+
+### Relative Voltages ###
+
+Next, find all the pins and nets in the design whose voltage
+is defined to be relative to something else.
+
+No relative voltages were found.
+
+### Propagation of Relative Voltages ###
+
+From these relative voltages, we can compute the voltages of
+other pins and nets.
+
+### Final Check for Inconsistencies ###
+
+Finally, check whether all the computed voltages are consistent
+with what was declared in the design.
+
+No inconsistencies found.
+
+### Final Summary ###
+
+Solved Voltages:
+
+Unsolved Voltages:
+
+  Connected group 0:
+    net GND
+    component pin U1.TEST_EN
+    component pin U1.GND[8]
+    component pin U1.GND[9]
+    component pin U1.GND[10]
+    component pin U1.GND[7]
+    component pin U1.GND[11]
+    component pin U1.GND[6]
+    component pin U1.GND[5]
+    component pin U1.GND[12]
+    component pin U1.GND[3]
+    component pin U1.GND[4]
+    component pin U1.GND[1]
+    component pin U1.GND[2]
+    component pin U1.GND[0]
+    component pin U1.GND[14]
+    component pin U1.GND[13]
+    component pin U1.GND[16]
+    component pin U1.GND[15]
+    component pin U1.GND[24]
+    component pin U1.GND[19]
+    component pin U1.GND[23]
+    component pin U1.GND[20]
+    component pin U1.GND[22]
+    component pin U1.GND[17]
+    component pin U1.GND[21]
+    component pin U1.GND[18]
+    component pin U1.GND[25]
+    component pin U1.GND[26]
+    component pin U1.GND[27]
+    component pin U1.GND[28]
+    component pin U1.GND[29]
+  

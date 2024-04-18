@@ -1,0 +1,32 @@
+#use-added-syntax(jitx)
+defpackage main :
+  import jitx
+  import core
+  import jitx/commands
+  import ocdb/utils/generic-components
+  import helpers
+  import ocdb/modules/passive-circuits
+
+; Define the shape/size of the board
+val board-shape = RoundedRectangle(30.0, 18.5, 0.25)
+
+pcb-module lm317a-regulator (output-voltage:Toleranced) :
+  pin vin
+  pin vout
+  pin gnd
+  pin adj
+
+  inst lm317a : ocdb/components/unisonic/LM317A/component
+  net (vin  lm317a.input)
+  net (vout lm317a.output)
+
+  cap-strap(lm317a.input, gnd, 0.1e-6)
+  cap-strap(lm317a.output, gnd, 1.0e-6)
+
+  inst output-voltage-divider : voltage-divider(source-voltage   = output-voltage, 
+                                                divider-output   = 1.25 +/- (15 %) 
+                                                current          = 5.0e-3 )
+
+  net (output-voltage-divider.in lm317a.output)
+  net (output-voltage-divider.out lm317a.adj adj)
+  net (output-voltage-divider.lo gnd)

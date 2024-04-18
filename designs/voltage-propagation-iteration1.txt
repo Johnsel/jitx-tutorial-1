@@ -1,0 +1,244 @@
+### Performing voltage propagation analysis ###
+
+Detect which items are electrically connected together:
+
+  Connected group 0:
+    module pin reg.output-voltage-divider.in
+    component pin reg.output-voltage-divider.r-hi.p[1]
+  
+  Connected group 1:
+    net vin
+    module pin source.power.vdd
+    module pin reg.vin
+    component pin reg.cap.p[1]
+    component pin reg.lm317a.input
+    component pin source.vdd-plug.p
+  
+  Connected group 2:
+    module pin reg.output-voltage-divider.out
+    component pin reg.output-voltage-divider.r-lo.p[1]
+    component pin reg.output-voltage-divider.r-hi.p[2]
+  
+  Connected group 3:
+    net vout
+    module pin reg.vout
+    component pin reg.cap.p[1]
+    component pin reg.lm317a.output
+    component pin load.p[1]
+    component pin measure.sig
+  
+  Connected group 4:
+    module pin reg.adj
+    module pin TP--922754888.tp[0]
+    component pin TP--922754888.point[0].p
+  
+  Connected group 5:
+    module pin reg.output-voltage-divider.lo
+    component pin reg.output-voltage-divider.r-lo.p[2]
+  
+  Connected group 6:
+    net gnd
+    module pin source.power.gnd
+    module pin reg.gnd
+    module pin TP--922754888.tp[1]
+    component pin reg.cap.p[2]
+    component pin reg.cap.p[2]
+    component pin TP--922754888.point[1].p
+    component pin load.p[2]
+    component pin source.gnd-plug.p
+    component pin measure.gnd
+  
+  Connected group 7:
+    net GND
+    component pin U1.TEST_EN
+    component pin U1.GND[11]
+    component pin U1.GND[10]
+    component pin U1.GND[13]
+    component pin U1.GND[12]
+    component pin U1.GND[6]
+    component pin U1.GND[7]
+    component pin U1.GND[8]
+    component pin U1.GND[9]
+    component pin U1.GND[5]
+    component pin U1.GND[4]
+    component pin U1.GND[3]
+    component pin U1.GND[2]
+    component pin U1.GND[0]
+    component pin U1.GND[1]
+    component pin U1.GND[16]
+    component pin U1.GND[17]
+    component pin U1.GND[14]
+    component pin U1.GND[15]
+    component pin U1.GND[21]
+    component pin U1.GND[20]
+    component pin U1.GND[19]
+    component pin U1.GND[18]
+    component pin U1.GND[22]
+    component pin U1.GND[23]
+    component pin U1.GND[24]
+    component pin U1.GND[25]
+    component pin U1.GND[27]
+    component pin U1.GND[26]
+    component pin U1.GND[29]
+    component pin U1.GND[28]
+  
+### Starting Points ###
+
+Voltage propagation starts by searching for items that have a
+'.voltage' property of type 'Double' or 'Toleranced'.
+
+The following starting points were found:
+
+  unnamed net (Net(L183219/D183199(relative))) in group 1 has voltage Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  unnamed net (Net(L183214/D183199(relative))) in group 3 has voltage Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  unnamed net (Net(L183613/D183199(relative))) in group 6 has voltage Toleranced(0.0 <= 0.0 <= 0.0)
+  
+### Relative Voltages ###
+
+Next, find all the pins and nets in the design whose voltage
+is defined to be relative to something else.
+
+No relative voltages were found.
+
+### Propagation of Relative Voltages ###
+
+From these relative voltages, we can compute the voltages of
+other pins and nets.
+
+### Final Check for Inconsistencies ###
+
+Finally, check whether all the computed voltages are consistent
+with what was declared in the design.
+
+No inconsistencies found.
+
+### Final Summary ###
+
+Solved Voltages:
+
+  voltage of unnamed net (Net(L183219/D183199(relative))) is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of unnamed net (Net(L183213/D183199(relative))) is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of unnamed net (Net(L183584/D183199(relative))) is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of net vin is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of module pin source.power.vdd is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of module pin reg.vin is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of component pin reg.cap.p[1] is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of component pin reg.lm317a.input is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of component pin source.vdd-plug.p is Toleranced(10.0 <= 10.0 <= 10.0)
+  
+  voltage of unnamed net (Net(L183214/D183199(relative))) is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of unnamed net (Net(L183225/D183199(relative))) is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of unnamed net (Net(L183612/D183199(relative))) is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of net vout is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of module pin reg.vout is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of component pin reg.cap.p[1] is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of component pin reg.lm317a.output is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of component pin load.p[1] is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of component pin measure.sig is Toleranced(2.97 <= 3.3 <= 3.63)
+  
+  voltage of unnamed net (Net(L183613/D183199(relative))) is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of unnamed net (Net(L183220/D183199(relative))) is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of unnamed net (Net(L183226/D183199(relative))) is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of unnamed net (Net(L183605/D183199(relative))) is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of unnamed net (Net(L183607/D183199(relative))) is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of net gnd is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of unnamed net (Net(L183585/D183199(relative))) is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of unnamed net (Net(L183594/D183199(relative))) is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of module pin source.power.gnd is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of module pin reg.gnd is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of module pin TP--922754888.tp[1] is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of component pin reg.cap.p[2] is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of component pin reg.cap.p[2] is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of component pin TP--922754888.point[1].p is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of component pin load.p[2] is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of component pin source.gnd-plug.p is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+  voltage of component pin measure.gnd is Toleranced(0.0 <= 0.0 <= 0.0)
+  
+Unsolved Voltages:
+
+  Connected group 0:
+    module pin reg.output-voltage-divider.in
+    component pin reg.output-voltage-divider.r-hi.p[1]
+  
+  Connected group 2:
+    module pin reg.output-voltage-divider.out
+    component pin reg.output-voltage-divider.r-lo.p[1]
+    component pin reg.output-voltage-divider.r-hi.p[2]
+  
+  Connected group 4:
+    module pin reg.adj
+    module pin TP--922754888.tp[0]
+    component pin TP--922754888.point[0].p
+  
+  Connected group 5:
+    module pin reg.output-voltage-divider.lo
+    component pin reg.output-voltage-divider.r-lo.p[2]
+  
+  Connected group 7:
+    net GND
+    component pin U1.TEST_EN
+    component pin U1.GND[11]
+    component pin U1.GND[10]
+    component pin U1.GND[13]
+    component pin U1.GND[12]
+    component pin U1.GND[6]
+    component pin U1.GND[7]
+    component pin U1.GND[8]
+    component pin U1.GND[9]
+    component pin U1.GND[5]
+    component pin U1.GND[4]
+    component pin U1.GND[3]
+    component pin U1.GND[2]
+    component pin U1.GND[0]
+    component pin U1.GND[1]
+    component pin U1.GND[16]
+    component pin U1.GND[17]
+    component pin U1.GND[14]
+    component pin U1.GND[15]
+    component pin U1.GND[21]
+    component pin U1.GND[20]
+    component pin U1.GND[19]
+    component pin U1.GND[18]
+    component pin U1.GND[22]
+    component pin U1.GND[23]
+    component pin U1.GND[24]
+    component pin U1.GND[25]
+    component pin U1.GND[27]
+    component pin U1.GND[26]
+    component pin U1.GND[29]
+    component pin U1.GND[28]
+  

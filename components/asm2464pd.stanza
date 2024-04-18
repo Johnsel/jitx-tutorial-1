@@ -1,0 +1,606 @@
+; When renaming the stanza package name below, also rename it in the folder stanza.proj
+; See docs.jitx.com for help
+#use-added-syntax(jitx)
+defpackage components/asm2464pd:
+  import core
+  import collections
+  import jitx
+  import jitx/commands
+  import ocdb/utils/defaults
+;  import ocdb/utils/landpatterns
+  import ocdb/utils/box-symbol
+  import ocdb/utils/bundles
+
+pcb-pad oval-smd-pad :
+  type = SMD
+  shape = Capsule(0.2, 0.2, loc(0.0, 0.0))
+  ocdb/utils/landpatterns/apply-soldermask(0.075)
+  layer(Paste(Top)) = Capsule(0.2, 0.2, loc(0.0, 0.0))
+
+pcb-pad round-rect-smd-pad-1 :
+  type = SMD
+  shape = RoundedRectangle(0.18, 0.25, 0.045, loc(0.0, 0.0))
+  ocdb/utils/landpatterns/apply-soldermask(0.075)
+  layer(Paste(Top)) = RoundedRectangle(0.18, 0.25, 0.045, loc(0.0, 0.0))
+
+pcb-pad round-rect-smd-pad-2 :
+  type = SMD
+  shape = RoundedRectangle(0.25, 0.18, 0.045, loc(0.0, 0.0))
+  ocdb/utils/landpatterns/apply-soldermask(0.075)
+  layer(Paste(Top)) = RoundedRectangle(0.25, 0.18, 0.045, loc(0.0, 0.0))
+
+pcb-pad round-rect-smd-pad-3 :
+  type = SMD
+  shape = RoundedRectangle(0.25, 0.2, 0.05, loc(0.0, 0.0))
+  ocdb/utils/landpatterns/apply-soldermask(0.075)
+  layer(Paste(Top)) = RoundedRectangle(0.25, 0.2, 0.05, loc(0.0, 0.0))
+
+public pcb-landpattern BGA273C46P21X21_1000X1000X98_2 :
+  pad A1 : oval-smd-pad at loc(-4.600, 4.600) on Top
+  pad A10 : round-rect-smd-pad-1 at loc(-0.460, 4.600) on Top
+  pad A11 : round-rect-smd-pad-1 at loc(0.0, 4.600) on Top
+  pad A12 : round-rect-smd-pad-1 at loc(0.460, 4.600) on Top
+  pad A13 : round-rect-smd-pad-1 at loc(0.920, 4.600) on Top
+  pad A14 : round-rect-smd-pad-1 at loc(1.380, 4.600) on Top
+  pad A15 : round-rect-smd-pad-1 at loc(1.840, 4.600) on Top
+  pad A16 : round-rect-smd-pad-1 at loc(2.300, 4.600) on Top
+  pad A17 : round-rect-smd-pad-1 at loc(2.760, 4.600) on Top
+  pad A18 : round-rect-smd-pad-1 at loc(3.220, 4.600) on Top
+  pad A19 : round-rect-smd-pad-1 at loc(3.680, 4.600) on Top
+  pad A2 : round-rect-smd-pad-1 at loc(-4.140, 4.600) on Top
+  pad A20 : round-rect-smd-pad-1 at loc(4.140, 4.600) on Top
+  pad A21 : oval-smd-pad at loc(4.600, 4.600) on Top
+  pad A3 : round-rect-smd-pad-1 at loc(-3.680, 4.600) on Top
+  pad A4 : round-rect-smd-pad-1 at loc(-3.220, 4.600) on Top
+  pad A5 : round-rect-smd-pad-1 at loc(-2.760, 4.600) on Top
+  pad A6 : round-rect-smd-pad-1 at loc(-2.300, 4.600) on Top
+  pad A7 : round-rect-smd-pad-1 at loc(-1.840, 4.600) on Top
+  pad A8 : round-rect-smd-pad-1 at loc(-1.380, 4.600) on Top
+  pad A9 : round-rect-smd-pad-1 at loc(-0.920, 4.600) on Top
+  pad AA1 : oval-smd-pad at loc(-4.600, -4.600) on Top
+  pad AA10 : round-rect-smd-pad-1 at loc(-0.460, -4.600) on Top
+  pad AA11 : round-rect-smd-pad-1 at loc(0.0, -4.600) on Top
+  pad AA12 : round-rect-smd-pad-1 at loc(0.460, -4.600) on Top
+  pad AA13 : round-rect-smd-pad-1 at loc(0.920, -4.600) on Top
+  pad AA14 : round-rect-smd-pad-1 at loc(1.380, -4.600) on Top
+  pad AA15 : round-rect-smd-pad-1 at loc(1.840, -4.600) on Top
+  pad AA16 : round-rect-smd-pad-1 at loc(2.300, -4.600) on Top
+  pad AA17 : round-rect-smd-pad-1 at loc(2.760, -4.600) on Top
+  pad AA18 : round-rect-smd-pad-1 at loc(3.220, -4.600) on Top
+  pad AA19 : round-rect-smd-pad-1 at loc(3.680, -4.600) on Top
+  pad AA2 : round-rect-smd-pad-1 at loc(-4.140, -4.600) on Top
+  pad AA20 : round-rect-smd-pad-1 at loc(4.140, -4.600) on Top
+  pad AA21 : oval-smd-pad at loc(4.600, -4.600) on Top
+  pad AA3 : round-rect-smd-pad-1 at loc(-3.680, -4.600) on Top
+  pad AA4 : round-rect-smd-pad-1 at loc(-3.220, -4.600) on Top
+  pad AA5 : round-rect-smd-pad-1 at loc(-2.760, -4.600) on Top
+  pad AA6 : round-rect-smd-pad-1 at loc(-2.300, -4.600) on Top
+  pad AA7 : round-rect-smd-pad-1 at loc(-1.840, -4.600) on Top
+  pad AA8 : round-rect-smd-pad-1 at loc(-1.380, -4.600) on Top
+  pad AA9 : round-rect-smd-pad-1 at loc(-0.920, -4.600) on Top
+  pad B1 : round-rect-smd-pad-2 at loc(-4.600, 4.140) on Top
+  pad B10 : oval-smd-pad at loc(-0.460, 4.140) on Top
+  pad B11 : oval-smd-pad at loc(0.0, 4.140) on Top
+  pad B12 : oval-smd-pad at loc(0.460, 4.140) on Top
+  pad B13 : oval-smd-pad at loc(0.920, 4.140) on Top
+  pad B14 : oval-smd-pad at loc(1.380, 4.140) on Top
+  pad B15 : oval-smd-pad at loc(1.840, 4.140) on Top
+  pad B16 : oval-smd-pad at loc(2.300, 4.140) on Top
+  pad B17 : oval-smd-pad at loc(2.760, 4.140) on Top
+  pad B18 : oval-smd-pad at loc(3.220, 4.140) on Top
+  pad B19 : oval-smd-pad at loc(3.680, 4.140) on Top
+  pad B2 : oval-smd-pad at loc(-4.140, 4.140) on Top
+  pad B20 : oval-smd-pad at loc(4.140, 4.140) on Top
+  pad B21 : round-rect-smd-pad-3 at loc(4.600, 4.140) on Top
+  pad B3 : oval-smd-pad at loc(-3.680, 4.140) on Top
+  pad B4 : oval-smd-pad at loc(-3.220, 4.140) on Top
+  pad B5 : oval-smd-pad at loc(-2.760, 4.140) on Top
+  pad B6 : oval-smd-pad at loc(-2.300, 4.140) on Top
+  pad B7 : oval-smd-pad at loc(-1.840, 4.140) on Top
+  pad B8 : oval-smd-pad at loc(-1.380, 4.140) on Top
+  pad B9 : oval-smd-pad at loc(-0.920, 4.140) on Top
+  pad C1 : round-rect-smd-pad-2 at loc(-4.600, 3.680) on Top
+  pad C2 : oval-smd-pad at loc(-4.140, 3.680) on Top
+  pad C20 : oval-smd-pad at loc(4.140, 3.680) on Top
+  pad C21 : round-rect-smd-pad-3 at loc(4.600, 3.680) on Top
+  pad D1 : round-rect-smd-pad-2 at loc(-4.600, 3.220) on Top
+  pad D11 : oval-smd-pad at loc(0.0, 3.250) on Top
+  pad D13 : oval-smd-pad at loc(0.650, 3.250) on Top
+  pad D14 : oval-smd-pad at loc(1.300, 3.250) on Top
+  pad D16 : oval-smd-pad at loc(1.950, 3.250) on Top
+  pad D17 : oval-smd-pad at loc(2.600, 3.250) on Top
+  pad D18 : oval-smd-pad at loc(3.250, 3.250) on Top
+  pad D2 : oval-smd-pad at loc(-4.140, 3.220) on Top
+  pad D20 : oval-smd-pad at loc(4.140, 3.220) on Top
+  pad D21 : round-rect-smd-pad-3 at loc(4.600, 3.220) on Top
+  pad D4 : oval-smd-pad at loc(-3.250, 3.250) on Top
+  pad D5 : oval-smd-pad at loc(-2.600, 3.250) on Top
+  pad D6 : oval-smd-pad at loc(-1.950, 3.250) on Top
+  pad D8 : oval-smd-pad at loc(-1.300, 3.250) on Top
+  pad D9 : oval-smd-pad at loc(-0.650, 3.250) on Top
+  pad E1 : round-rect-smd-pad-2 at loc(-4.600, 2.760) on Top
+  pad E11 : oval-smd-pad at loc(0.0, 2.600) on Top
+  pad E13 : oval-smd-pad at loc(0.650, 2.600) on Top
+  pad E14 : oval-smd-pad at loc(1.300, 2.600) on Top
+  pad E16 : oval-smd-pad at loc(1.950, 2.600) on Top
+  pad E17 : oval-smd-pad at loc(2.600, 2.600) on Top
+  pad E18 : oval-smd-pad at loc(3.250, 2.600) on Top
+  pad E2 : oval-smd-pad at loc(-4.140, 2.760) on Top
+  pad E20 : oval-smd-pad at loc(4.140, 2.760) on Top
+  pad E21 : round-rect-smd-pad-3 at loc(4.600, 2.760) on Top
+  pad E4 : oval-smd-pad at loc(-3.250, 2.600) on Top
+  pad E5 : oval-smd-pad at loc(-2.600, 2.600) on Top
+  pad E6 : oval-smd-pad at loc(-1.950, 2.600) on Top
+  pad E8 : oval-smd-pad at loc(-1.300, 2.600) on Top
+  pad E9 : oval-smd-pad at loc(-0.650, 2.600) on Top
+  pad F1 : round-rect-smd-pad-2 at loc(-4.600, 2.300) on Top
+  pad F11 : oval-smd-pad at loc(0.0, 1.950) on Top
+  pad F13 : oval-smd-pad at loc(0.650, 1.950) on Top
+  pad F14 : oval-smd-pad at loc(1.300, 1.950) on Top
+  pad F16 : oval-smd-pad at loc(1.950, 1.950) on Top
+  pad F17 : oval-smd-pad at loc(2.600, 1.950) on Top
+  pad F18 : oval-smd-pad at loc(3.250, 1.950) on Top
+  pad F2 : oval-smd-pad at loc(-4.140, 2.300) on Top
+  pad F20 : oval-smd-pad at loc(4.140, 2.300) on Top
+  pad F21 : round-rect-smd-pad-3 at loc(4.600, 2.300) on Top
+  pad F4 : oval-smd-pad at loc(-3.250, 1.950) on Top
+  pad F5 : oval-smd-pad at loc(-2.600, 1.950) on Top
+  pad F6 : oval-smd-pad at loc(-1.950, 1.950) on Top
+  pad F8 : oval-smd-pad at loc(-1.300, 1.950) on Top
+  pad F9 : oval-smd-pad at loc(-0.650, 1.950) on Top
+  pad G1 : round-rect-smd-pad-2 at loc(-4.600, 1.840) on Top
+  pad G2 : oval-smd-pad at loc(-4.140, 1.840) on Top
+  pad G20 : oval-smd-pad at loc(4.140, 1.840) on Top
+  pad G21 : round-rect-smd-pad-3 at loc(4.600, 1.840) on Top
+  pad H1 : round-rect-smd-pad-2 at loc(-4.600, 1.380) on Top
+  pad H11 : oval-smd-pad at loc(0.0, 1.300) on Top
+  pad H13 : oval-smd-pad at loc(0.650, 1.300) on Top
+  pad H14 : oval-smd-pad at loc(1.300, 1.300) on Top
+  pad H16 : oval-smd-pad at loc(1.950, 1.300) on Top
+  pad H17 : oval-smd-pad at loc(2.600, 1.300) on Top
+  pad H18 : oval-smd-pad at loc(3.250, 1.300) on Top
+  pad H2 : oval-smd-pad at loc(-4.140, 1.380) on Top
+  pad H20 : oval-smd-pad at loc(4.140, 1.380) on Top
+  pad H21 : round-rect-smd-pad-3 at loc(4.600, 1.380) on Top
+  pad H4 : oval-smd-pad at loc(-3.250, 1.300) on Top
+  pad H5 : oval-smd-pad at loc(-2.600, 1.300) on Top
+  pad H6 : oval-smd-pad at loc(-1.950, 1.300) on Top
+  pad H8 : oval-smd-pad at loc(-1.300, 1.300) on Top
+  pad H9 : oval-smd-pad at loc(-0.650, 1.300) on Top
+  pad J1 : round-rect-smd-pad-2 at loc(-4.600, 0.920) on Top
+  pad J11 : oval-smd-pad at loc(0.0, 0.650) on Top
+  pad J13 : oval-smd-pad at loc(0.650, 0.650) on Top
+  pad J14 : oval-smd-pad at loc(1.300, 0.650) on Top
+  pad J16 : oval-smd-pad at loc(1.950, 0.650) on Top
+  pad J17 : oval-smd-pad at loc(2.600, 0.650) on Top
+  pad J18 : oval-smd-pad at loc(3.250, 0.650) on Top
+  pad J2 : oval-smd-pad at loc(-4.140, 0.920) on Top
+  pad J20 : oval-smd-pad at loc(4.140, 0.920) on Top
+  pad J21 : round-rect-smd-pad-3 at loc(4.600, 0.920) on Top
+  pad J4 : oval-smd-pad at loc(-3.250, 0.650) on Top
+  pad J5 : oval-smd-pad at loc(-2.600, 0.650) on Top
+  pad J6 : oval-smd-pad at loc(-1.950, 0.650) on Top
+  pad J8 : oval-smd-pad at loc(-1.300, 0.650) on Top
+  pad J9 : oval-smd-pad at loc(-0.650, 0.650) on Top
+  pad K1 : round-rect-smd-pad-2 at loc(-4.600, 0.460) on Top
+  pad K2 : oval-smd-pad at loc(-4.140, 0.460) on Top
+  pad K20 : oval-smd-pad at loc(4.140, 0.460) on Top
+  pad K21 : round-rect-smd-pad-3 at loc(4.600, 0.460) on Top
+  pad L1 : round-rect-smd-pad-2 at loc(-4.600, 0.0) on Top
+  pad L11 : oval-smd-pad at loc(0.0, 0.0) on Top
+  pad L13 : oval-smd-pad at loc(0.650, 0.0) on Top
+  pad L14 : oval-smd-pad at loc(1.300, 0.0) on Top
+  pad L16 : oval-smd-pad at loc(1.950, 0.0) on Top
+  pad L17 : oval-smd-pad at loc(2.600, 0.0) on Top
+  pad L18 : oval-smd-pad at loc(3.250, 0.0) on Top
+  pad L2 : oval-smd-pad at loc(-4.140, 0.0) on Top
+  pad L20 : oval-smd-pad at loc(4.140, 0.0) on Top
+  pad L21 : round-rect-smd-pad-3 at loc(4.600, 0.0) on Top
+  pad L4 : oval-smd-pad at loc(-3.250, 0.0) on Top
+  pad L5 : oval-smd-pad at loc(-2.600, 0.0) on Top
+  pad L6 : oval-smd-pad at loc(-1.950, 0.0) on Top
+  pad L8 : oval-smd-pad at loc(-1.300, 0.0) on Top
+  pad L9 : oval-smd-pad at loc(-0.650, 0.0) on Top
+  pad M1 : round-rect-smd-pad-2 at loc(-4.600, -0.460) on Top
+  pad M2 : oval-smd-pad at loc(-4.140, -0.460) on Top
+  pad M20 : oval-smd-pad at loc(4.140, -0.460) on Top
+  pad M21 : round-rect-smd-pad-3 at loc(4.600, -0.460) on Top
+  pad N1 : round-rect-smd-pad-2 at loc(-4.600, -0.920) on Top
+  pad N11 : oval-smd-pad at loc(0.0, -0.650) on Top
+  pad N13 : oval-smd-pad at loc(0.650, -0.650) on Top
+  pad N14 : oval-smd-pad at loc(1.300, -0.650) on Top
+  pad N16 : oval-smd-pad at loc(1.950, -0.650) on Top
+  pad N17 : oval-smd-pad at loc(2.600, -0.650) on Top
+  pad N18 : oval-smd-pad at loc(3.250, -0.650) on Top
+  pad N2 : oval-smd-pad at loc(-4.140, -0.920) on Top
+  pad N20 : oval-smd-pad at loc(4.140, -0.920) on Top
+  pad N21 : round-rect-smd-pad-3 at loc(4.600, -0.920) on Top
+  pad N4 : oval-smd-pad at loc(-3.250, -0.650) on Top
+  pad N5 : oval-smd-pad at loc(-2.600, -0.650) on Top
+  pad N6 : oval-smd-pad at loc(-1.950, -0.650) on Top
+  pad N8 : oval-smd-pad at loc(-1.300, -0.650) on Top
+  pad N9 : oval-smd-pad at loc(-0.650, -0.650) on Top
+  pad P1 : round-rect-smd-pad-2 at loc(-4.600, -1.380) on Top
+  pad P11 : oval-smd-pad at loc(0.0, -1.300) on Top
+  pad P13 : oval-smd-pad at loc(0.650, -1.300) on Top
+  pad P14 : oval-smd-pad at loc(1.300, -1.300) on Top
+  pad P16 : oval-smd-pad at loc(1.950, -1.300) on Top
+  pad P17 : oval-smd-pad at loc(2.600, -1.300) on Top
+  pad P18 : oval-smd-pad at loc(3.250, -1.300) on Top
+  pad P2 : oval-smd-pad at loc(-4.140, -1.380) on Top
+  pad P20 : oval-smd-pad at loc(4.140, -1.380) on Top
+  pad P21 : round-rect-smd-pad-3 at loc(4.600, -1.380) on Top
+  pad P4 : oval-smd-pad at loc(-3.250, -1.300) on Top
+  pad P5 : oval-smd-pad at loc(-2.600, -1.300) on Top
+  pad P6 : oval-smd-pad at loc(-1.950, -1.300) on Top
+  pad P8 : oval-smd-pad at loc(-1.300, -1.300) on Top
+  pad P9 : oval-smd-pad at loc(-0.650, -1.300) on Top
+  pad R1 : round-rect-smd-pad-2 at loc(-4.600, -1.840) on Top
+  pad R2 : oval-smd-pad at loc(-4.140, -1.840) on Top
+  pad R20 : oval-smd-pad at loc(4.140, -1.840) on Top
+  pad R21 : round-rect-smd-pad-3 at loc(4.600, -1.840) on Top
+  pad T1 : round-rect-smd-pad-2 at loc(-4.600, -2.300) on Top
+  pad T11 : oval-smd-pad at loc(0.0, -1.950) on Top
+  pad T13 : oval-smd-pad at loc(0.650, -1.950) on Top
+  pad T14 : oval-smd-pad at loc(1.300, -1.950) on Top
+  pad T16 : oval-smd-pad at loc(1.950, -1.950) on Top
+  pad T17 : oval-smd-pad at loc(2.600, -1.950) on Top
+  pad T18 : oval-smd-pad at loc(3.250, -1.950) on Top
+  pad T2 : oval-smd-pad at loc(-4.140, -2.300) on Top
+  pad T20 : oval-smd-pad at loc(4.140, -2.300) on Top
+  pad T21 : round-rect-smd-pad-3 at loc(4.600, -2.300) on Top
+  pad T4 : oval-smd-pad at loc(-3.250, -1.950) on Top
+  pad T5 : oval-smd-pad at loc(-2.600, -1.950) on Top
+  pad T6 : oval-smd-pad at loc(-1.950, -1.950) on Top
+  pad T8 : oval-smd-pad at loc(-1.300, -1.950) on Top
+  pad T9 : oval-smd-pad at loc(-0.650, -1.950) on Top
+  pad U1 : round-rect-smd-pad-2 at loc(-4.600, -2.760) on Top
+  pad U11 : oval-smd-pad at loc(0.0, -2.600) on Top
+  pad U13 : oval-smd-pad at loc(0.650, -2.600) on Top
+  pad U14 : oval-smd-pad at loc(1.300, -2.600) on Top
+  pad U16 : oval-smd-pad at loc(1.950, -2.600) on Top
+  pad U17 : oval-smd-pad at loc(2.600, -2.600) on Top
+  pad U18 : oval-smd-pad at loc(3.250, -2.600) on Top
+  pad U2 : oval-smd-pad at loc(-4.140, -2.760) on Top
+  pad U20 : oval-smd-pad at loc(4.140, -2.760) on Top
+  pad U21 : round-rect-smd-pad-3 at loc(4.600, -2.760) on Top
+  pad U4 : oval-smd-pad at loc(-3.250, -2.600) on Top
+  pad U5 : oval-smd-pad at loc(-2.600, -2.600) on Top
+  pad U6 : oval-smd-pad at loc(-1.950, -2.600) on Top
+  pad U8 : oval-smd-pad at loc(-1.300, -2.600) on Top
+  pad U9 : oval-smd-pad at loc(-0.650, -2.600) on Top
+  pad V1 : round-rect-smd-pad-2 at loc(-4.600, -3.220) on Top
+  pad V11 : oval-smd-pad at loc(0.0, -3.250) on Top
+  pad V13 : oval-smd-pad at loc(0.650, -3.250) on Top
+  pad V14 : oval-smd-pad at loc(1.300, -3.250) on Top
+  pad V16 : oval-smd-pad at loc(1.950, -3.250) on Top
+  pad V17 : oval-smd-pad at loc(2.600, -3.250) on Top
+  pad V18 : oval-smd-pad at loc(3.250, -3.250) on Top
+  pad V2 : oval-smd-pad at loc(-4.140, -3.220) on Top
+  pad V20 : oval-smd-pad at loc(4.140, -3.220) on Top
+  pad V21 : round-rect-smd-pad-3 at loc(4.600, -3.220) on Top
+  pad V4 : oval-smd-pad at loc(-3.250, -3.250) on Top
+  pad V5 : oval-smd-pad at loc(-2.600, -3.250) on Top
+  pad V6 : oval-smd-pad at loc(-1.950, -3.250) on Top
+  pad V8 : oval-smd-pad at loc(-1.300, -3.250) on Top
+  pad V9 : oval-smd-pad at loc(-0.650, -3.250) on Top
+  pad W1 : round-rect-smd-pad-2 at loc(-4.600, -3.680) on Top
+  pad W2 : oval-smd-pad at loc(-4.140, -3.680) on Top
+  pad W20 : oval-smd-pad at loc(4.140, -3.680) on Top
+  pad W21 : round-rect-smd-pad-3 at loc(4.600, -3.680) on Top
+  pad Y1 : round-rect-smd-pad-2 at loc(-4.600, -4.140) on Top
+  pad Y10 : oval-smd-pad at loc(-0.460, -4.140) on Top
+  pad Y11 : oval-smd-pad at loc(0.0, -4.140) on Top
+  pad Y12 : oval-smd-pad at loc(0.460, -4.140) on Top
+  pad Y13 : oval-smd-pad at loc(0.920, -4.140) on Top
+  pad Y14 : oval-smd-pad at loc(1.380, -4.140) on Top
+  pad Y15 : oval-smd-pad at loc(1.840, -4.140) on Top
+  pad Y16 : oval-smd-pad at loc(2.300, -4.140) on Top
+  pad Y17 : oval-smd-pad at loc(2.760, -4.140) on Top
+  pad Y18 : oval-smd-pad at loc(3.220, -4.140) on Top
+  pad Y19 : oval-smd-pad at loc(3.680, -4.140) on Top
+  pad Y2 : oval-smd-pad at loc(-4.140, -4.140) on Top
+  pad Y20 : oval-smd-pad at loc(4.140, -4.140) on Top
+  pad Y21 : round-rect-smd-pad-3 at loc(4.600, -4.140) on Top
+  pad Y3 : oval-smd-pad at loc(-3.680, -4.140) on Top
+  pad Y4 : oval-smd-pad at loc(-3.220, -4.140) on Top
+  pad Y5 : oval-smd-pad at loc(-2.760, -4.140) on Top
+  pad Y6 : oval-smd-pad at loc(-2.300, -4.140) on Top
+  pad Y7 : oval-smd-pad at loc(-1.840, -4.140) on Top
+  pad Y8 : oval-smd-pad at loc(-1.380, -4.140) on Top
+  pad Y9 : oval-smd-pad at loc(-0.920, -4.140) on Top
+
+  layer(Silkscreen("F-SilkS", Top)) = Polyline(0.250, [
+    Arc(-5.210, 5.210, 0.125, 0.0, 360.000)])
+  layer(Silkscreen("F-SilkS", Top)) = Text(">REF", 0.8, SW, loc(0.152, 5.549, 90.000), "Arial", TrueTypeFont, false, false)  
+
+public pcb-component component :
+  name = "asm2464pd"
+  description = "USB4/Thunderbolt to PCIe/NVMe Accessory controller"
+  mpn = "ASM2464PD"
+  manufacturer = "ASMedia"
+  reference-prefix = "U"
+
+  pin-properties :
+    [pin:Ref | pads:Ref ... | side:Dir | bank:Ref]
+    [UDP | M1 | Left | A]
+    [UDM | M2 | Left | A]
+    [UTXP0 | T1 | Left | A]
+    [UTXN0 | T2 | Left | A]
+    [UTXP1 | V2 | Left | A]
+    [UTXN1 | V1 | Left | A]
+    [URXP0 | P1 | Left | A]
+    [URXN0 | P2 | Left | A]
+    [URXP1 | Y2 | Left | A]
+    [URXN1 | Y1 | Left | A]
+    [VBUS | G1 | Left | A]
+    [CC1 | AA6 | Left | A]
+    [CC2 | Y6 | Left | A]
+    [SBU1 | K1 | Left | A]
+    [SBU2 | J1 | Left | A]
+    [REFCLKN0 | Y8 | Left | A]
+    [REFCLKP0 | AA8 | Left | A]
+    [PRXN1 | W20 | Left | A]
+    [PRXP1 | W21 | Left | A]
+    [PRXN0 | N20 | Left | A]
+    [PRXP0 | N21 | Left | A]
+    [PTXN1 | U21 | Left | A]
+    [PTXP1 | U20 | Left | A]
+    [PTXN0 | R21 | Left | A]
+    [PTXP0 | R20 | Left | A]
+    [PRXN3 | Y13 | Left | A]
+    [PRXP3 | AA13 | Left | A]
+    [PRXN2 | AA19 | Left | A]
+    [PRXP2 | Y19 | Left | A]
+    [UART_TX | B21 | Right | A]
+    [UART_RX | A21 | Right | A]
+    [HDDPC | C21 | Right | A]
+    [PTXN3 | AA15 | Left | A]
+    [PTXP3 | Y15 | Left | A]
+    [PTXN2 | AA17 | Left | A]
+    [PTXP2 | Y17 | Left | A]
+    [PERST0# | G21 | Right | A]
+    [RST# | H1 | Right | A]
+    [TEST_EN | H21 | Left | A]
+    [I2C_DATA_P | F1 | Right | A]
+    [I2C_CLK_P | E1 | Right | A]
+    [GPIO0 | D1 | Right | A]
+    [GPIO1 | C1 | Right | A]
+    [GPIO2 | B1 | Right | A]
+    [GPIO3 | A1 | Right | A]
+    [SPI_CS# | A2 | Right | A]
+    [SPI_DO | A3 | Right | A]
+    [SPI_CLK | A5 | Right | A]
+    [SPI_DI | A4 | Right | A]
+    [GPIO8 | A19 | Right | A]
+    [GPIO14 | A20 | Right | A]
+    [GPIO15 | A6 | Right | A]
+    [GPIO16 | A7 | Right | A]
+    [GPIO17 | A8 | Right | A]
+    [GPIO18 | A9 | Right | A]
+    [GPIO19 | A10 | Right | A]
+    [GPIO20 | A11 | Right | A]
+    [GPIO21 | A12 | Right | A]
+    [GPIO22 | A13 | Right | A]
+    [GPIO23 | A14 | Right | A]
+    [GPIO24 | A15 | Right | A]
+    [GPIO25 | A16 | Right | A]
+    [GPIO26 | A17 | Right | A]
+    [GPIO27 | A18 | Right | A]
+    [REXT | AA3 | Right | A]
+    [XI | AA4 | Right | A]
+    [XO | Y4 | Right | A]
+    [NC[0] | J2 | Left | B]
+    [NC[1] | H2 | Left | B]
+    [NC[2] | G2 | Left | B]
+    [NC[3] | F2 | Left | B]
+    [NC[4] | E2 | Left | B]
+    [NC[5] | D2 | Left | B]
+    [NC[6] | C2 | Left | B]
+    [NC[7] | B2 | Left | B]
+    [NC[8] | B3 | Left | B]
+    [NC[9] | B4 | Left | B]
+    [NC[10] | B5 | Left | B]
+    [NC[11] | B6 | Left | B]
+    [NC[12] | B7 | Left | B]
+    [NC[13] | B8 | Left | B]
+    [NC[14] | B9 | Left | B]
+    [NC[15] | B10 | Left | B]
+    [NC[16] | B11 | Left | B]
+    [NC[17] | B12 | Left | B]
+    [NC[18] | B13 | Left | B]
+    [NC[19] | B14 | Left | B]
+    [NC[20] | B15 | Left | B]
+    [NC[21] | B16 | Left | B]
+    [NC[22] | B17 | Left | B]
+    [NC[23] | B18 | Left | B]
+    [NC[24] | B19 | Left | B]
+    [NC[25] | B20 | Left | B]
+    [NC[26] | C20 | Left | B]
+    [NC[27] | D20 | Left | B]
+    [NC[28] | E20 | Left | B]
+    [NC[29] | F20 | Left | B]
+    [NC[30] | G20 | Left | B]
+    [NC[31] | H20 | Left | B]
+    [NC[32] | Y7 | Left | B]
+    [NC[33] | AA7 | Left | B]
+    [NC[34] | Y10 | Left | B]
+    [NC[35] | AA10 | Left | B]
+    [NC[36] | Y11 | Left | B]
+    [NC[37] | AA11 | Left | B]
+    [NC[38] | D21 | Left | B]
+    [NC[39] | E21 | Left | B]
+    [NC[40] | F21 | Left | B]
+    [GND[0] | K2 | Right | C]
+    [GND[1] | D4 | Right | C]
+    [GND[2] | E4 | Right | C]
+    [GND[3] | F4 | Right | C]
+    [GND[4] | H4 | Right | C]
+    [GND[5] | J4 | Right | C]
+    [GND[6] | D5 | Right | C]
+    [GND[7] | E5 | Right | C]
+    [GND[8] | F5 | Right | C]
+    [GND[9] | J5 | Right | C]
+    [GND[10] | J6 | Right | C]
+    [GND[11] | F8 | Right | C]
+    [GND[12] | H8 | Right | C]
+    [GND[13] | L9 | Right | C]
+    [GND[14] | N9 | Right | C]
+    [GND[15] | P9 | Right | C]
+    [GND[16] | D11 | Right | C]
+    [GND[17] | J11 | Right | C]
+    [GND[18] | N11 | Right | C]
+    [GND[19] | P11 | Right | C]
+    [GND[20] | L13 | Right | C]
+    [GND[21] | N13 | Right | C]
+    [GND[22] | D17 | Right | C]
+    [GND[23] | E17 | Right | C]
+    [GND[24] | F17 | Right | C]
+    [GND[25] | H17 | Right | C]
+    [GND[26] | D18 | Right | C]
+    [GND[27] | E18 | Right | C]
+    [GND[28] | F18 | Right | C]
+    [GND[29] | H18 | Right | C]
+    [VDD[0] | J21 | Left | C]
+    [VDD[1] | J20 | Left | C]
+    [VDD[2] | K21 | Left | C]
+    [VDD[3] | K20 | Left | C]
+    [VDD[4] | J18 | Left | C]
+    [VDD[5] | J17 | Left | C]
+    [VDD[6] | J16 | Left | C]
+    [VDD[7] | H16 | Left | C]
+    [VDD[8] | F16 | Left | C]
+    [VDD[9] | E16 | Left | C]
+    [VDD[10] | D16 | Left | C]
+    [VDD[11] | J14 | Left | C]
+    [VDD[12] | J13 | Left | C]
+    [VDD[13] | H14 | Left | C]
+    [VDD[14] | H13 | Left | C]
+    [VDD[15] | F14 | Left | C]
+    [VDD[16] | E14 | Left | C]
+    [VDD[17] | D14 | Left | C]
+    [VDD[18] | L11 | Left | C]
+    [VDD[19] | L14 | Left | C]
+    [VDD[20] | N14 | Left | C]
+    [VDD[21] | P14 | Left | C]
+    [VDD[22] | T14 | Left | C]
+    [VDD[23] | P13 | Left | C]
+    [VDD[24] | T13 | Left | C]
+    [VDD[25] | E11 | Left | C]
+    [VDD[26] | F11 | Left | C]
+    [VDD[39] | H11 | Left | C]
+    [VDD[38] | T11 | Left | C]
+    [VDD[37] | F9 | Left | C]
+    [VDD[36] | H9 | Left | C]
+    [VDD[35] | J9 | Left | C]
+    [VDD[34] | J8 | Left | C]
+    [VDD[33] | L8 | Left | C]
+    [VDD[32] | N8 | Left | C]
+    [VDD[31] | P8 | Left | C]
+    [VDD[30] | T9 | Left | C]
+    [VDD[29] | T8 | Left | C]
+    [VDD[28] | U9 | Left | C]
+    [VDD[27] | U8 | Left | C]
+    [GNDA[0] | M21 | Right | D]
+    [GNDA[1] | M20 | Right | D]
+    [GNDA[2] | P21 | Right | D]
+    [GNDA[3] | P20 | Right | D]
+    [GNDA[4] | T21 | Right | D]
+    [GNDA[5] | T20 | Right | D]
+    [GNDA[6] | V21 | Right | D]
+    [GNDA[7] | V20 | Right | D]
+    [GNDA[8] | Y21 | Right | D]
+    [GNDA[9] | Y20 | Right | D]
+    [GNDA[10] | AA21 | Right | D]
+    [GNDA[11] | AA20 | Right | D]
+    [GNDA[12] | Y18 | Right | D]
+    [GNDA[13] | Y16 | Right | D]
+    [GNDA[14] | Y14 | Right | D]
+    [GNDA[15] | Y12 | Right | D]
+    [GNDA[16] | Y9 | Right | D]
+    [GNDA[17] | Y5 | Right | D]
+    [GNDA[18] | Y3 | Right | D]
+    [GNDA[19] | AA18 | Right | D]
+    [GNDA[20] | AA16 | Right | D]
+    [GNDA[21] | AA14 | Right | D]
+    [GNDA[22] | AA12 | Right | D]
+    [GNDA[23] | AA9 | Right | D]
+    [GNDA[24] | AA5 | Right | D]
+    [GNDA[25] | N18 | Right | D]
+    [GNDA[26] | N17 | Right | D]
+    [GNDA[27] | P18 | Right | D]
+    [GNDA[28] | P17 | Right | D]
+    [GNDA[29] | T18 | Right | D]
+    [GNDA[30] | T17 | Right | D]
+    [GNDA[31] | U18 | Right | D]
+    [GNDA[32] | U17 | Right | D]
+    [GNDA[33] | V18 | Right | D]
+    [GNDA[34] | V17 | Right | D]
+    [GNDA[35] | V16 | Right | D]
+    [GNDA[36] | V14 | Right | D]
+    [GNDA[37] | V13 | Right | D]
+    [GNDA[38] | V11 | Right | D]
+    [GNDA[39] | V9 | Right | D]
+    [GNDA[40] | V8 | Right | D]
+    [GNDA[41] | V6 | Right | D]
+    [GNDA[42] | L5 | Right | D]
+    [GNDA[43] | L4 | Right | D]
+    [GNDA[44] | N5 | Right | D]
+    [GNDA[45] | N4 | Right | D]
+    [GNDA[46] | P5 | Right | D]
+    [GNDA[47] | P4 | Right | D]
+    [GNDA[48] | T5 | Right | D]
+    [GNDA[49] | T4 | Right | D]
+    [GNDA[50] | U5 | Right | D]
+    [GNDA[51] | U4 | Right | D]
+    [GNDA[52] | V5 | Right | D]
+    [GNDA[53] | V4 | Right | D]
+    [GNDA[54] | AA1 | Right | D]
+    [GNDA[55] | AA2 | Right | D]
+    [GNDA[56] | W1 | Right | D]
+    [GNDA[57] | W2 | Right | D]
+    [GNDA[58] | U1 | Right | D]
+    [GNDA[59] | U2 | Right | D]
+    [GNDA[60] | R1 | Right | D]
+    [GNDA[61] | R2 | Right | D]
+    [GNDA[62] | N1 | Right | D]
+    [GNDA[63] | N2 | Right | D]
+    [GNDA[64] | L1 | Right | D]
+    [GNDA[65] | L2 | Right | D]
+    [VCCL[16] | L21 | Left | D]
+    [VCCL[15] | L20 | Left | D]
+    [VCCL[14] | L18 | Left | D]
+    [VCCL[13] | L17 | Left | D]
+    [VCCL[12] | L16 | Left | D]
+    [VCCL[11] | N16 | Left | D]
+    [VCCL[10] | P16 | Left | D]
+    [VCCL[9] | T16 | Left | D]
+    [VCCL[8] | U16 | Left | D]
+    [VCCL[7] | U14 | Left | D]
+    [VCCL[6] | U13 | Left | D]
+    [VCCL[5] | U11 | Left | D]
+    [VCCL[4] | U6 | Left | D]
+    [VCCL[3] | T6 | Left | D]
+    [VCCL[2] | P6 | Left | D]
+    [VCCL[1] | N6 | Left | D]
+    [VCCL[0] | L6 | Left | D]
+    [VCCH[10] | D13 | Left | D]
+    [VCCH[9] | E13 | Left | D]
+    [VCCH[8] | F13 | Left | D]
+    [VCCH[7] | D9 | Left | D]
+    [VCCH[6] | E9 | Left | D]
+    [VCCH[5] | D8 | Left | D]
+    [VCCH[4] | E8 | Left | D]
+    [VCCH[3] | D6 | Left | D]
+    [VCCH[2] | E6 | Left | D]
+    [VCCH[1] | F6 | Left | D]
+    [VCCH[0] | H6 | Left | D]
+    [VCCA33 | H5 | Left | D]
+
+
+  make-box-symbol()
+  assign-landpattern(BGA273C46P21X21_1000X1000X98_2)
+  
+; Visualize the symbol and landpattern in the VSCode visualizer.
+; Remove before use of the component in a design
+;view(component)

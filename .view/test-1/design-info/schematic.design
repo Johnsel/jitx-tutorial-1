@@ -1,0 +1,387 @@
+{
+	"diff-data":	{
+		"nets-data":	[],
+		"inst-to-component":	[["9WdwGntCsG7pmNfUHzUoHr", "3ubtWvp3hBcYgGS5rMRyyT"]],
+		"symbol-shapes":	[["4vW671QeM413K3LfF5ZdPB", {
+					"boxes":	[{
+							"sw":	{
+								"x":	-10,
+								"y":	-8
+							},
+							"ne":	{
+								"x":	10,
+								"y":	8
+							},
+							"ports":	[{
+									"ref":	"B[0]",
+									"pt":	{
+										"x":	0,
+										"y":	-8
+									},
+									"dir":	"Down"
+								}, {
+									"ref":	"L[0]",
+									"pt":	{
+										"x":	-10,
+										"y":	1
+									},
+									"dir":	"Left"
+								}, {
+									"ref":	"L[1]",
+									"pt":	{
+										"x":	-10,
+										"y":	-1
+									},
+									"dir":	"Left"
+								}, {
+									"ref":	"R[0]",
+									"pt":	{
+										"x":	10,
+										"y":	1
+									},
+									"dir":	"Right"
+								}, {
+									"ref":	"R[1]",
+									"pt":	{
+										"x":	10,
+										"y":	-1
+									},
+									"dir":	"Right"
+								}, {
+									"ref":	"T[0]",
+									"pt":	{
+										"x":	0,
+										"y":	8
+									},
+									"dir":	"Up"
+								}]
+						}]
+				}], ["3ubtWvp3hBcYgGS5rMRyyT", {
+					"boxes":	[{
+							"sw":	{
+								"x":	-10,
+								"y":	-8
+							},
+							"ne":	{
+								"x":	10,
+								"y":	8
+							},
+							"ports":	[{
+									"ref":	"GND",
+									"pt":	{
+										"x":	0,
+										"y":	-8
+									},
+									"dir":	"Down"
+								}, {
+									"ref":	"PINNAME1",
+									"pt":	{
+										"x":	-10,
+										"y":	1
+									},
+									"dir":	"Left"
+								}, {
+									"ref":	"PINNAME2",
+									"pt":	{
+										"x":	10,
+										"y":	1
+									},
+									"dir":	"Right"
+								}, {
+									"ref":	"PINNAME3",
+									"pt":	{
+										"x":	-10,
+										"y":	-1
+									},
+									"dir":	"Left"
+								}, {
+									"ref":	"PINNAME4",
+									"pt":	{
+										"x":	10,
+										"y":	-1
+									},
+									"dir":	"Right"
+								}, {
+									"ref":	"VCC",
+									"pt":	{
+										"x":	0,
+										"y":	8
+									},
+									"dir":	"Up"
+								}]
+						}]
+				}], ["1114VuAvHNgLD5Rkx8Vpm", {
+					"boxes":	[{
+							"sw":	{
+								"x":	-3,
+								"y":	0
+							},
+							"ne":	{
+								"x":	3,
+								"y":	1
+							},
+							"ports":	[{
+									"ref":	"require",
+									"pt":	{
+										"x":	3,
+										"y":	0
+									},
+									"dir":	"Right"
+								}, {
+									"ref":	"support",
+									"pt":	{
+										"x":	-3,
+										"y":	0
+									},
+									"dir":	"Left"
+								}]
+						}]
+				}]],
+		"unit-table":	[["9TSmgFFRtKnTf3EzxENuPt", 0], ["GEug8SiyZu7MQVrX4PGasL", 0], ["11111111111bpvQib", 0], ["11111111111PpRPMi", 0], ["11111111111AikgkC", 0], ["3ZUrBwd4bPjw1zaDyrWiPy", 0], ["6B5VwAJH3ACYZH7oe9X9HE", 0], ["ERJPW9umgcywrDFneiBThL", 0], ["11111111111hjqKAa", 0], ["56xjhHHh56SBGTA7wfNQRV", 0], ["11111111111oNFJWX", 0], ["11111111111GdLgYG", 0], ["1111111111113NGn7J", 0], ["11111111111UmmXhg", 0]],
+		"component-pin-map":	[[["1114VuAvHNgLD5Rkx8Vpm", "require-pin"], "11111111111AikgkC"], [["3ubtWvp3hBcYgGS5rMRyyT", "PINNAME3"], "9TSmgFFRtKnTf3EzxENuPt"], [["3ubtWvp3hBcYgGS5rMRyyT", "PINNAME1"], "3ZUrBwd4bPjw1zaDyrWiPy"], [["3ubtWvp3hBcYgGS5rMRyyT", "VCC"], "6B5VwAJH3ACYZH7oe9X9HE"], [["3ubtWvp3hBcYgGS5rMRyyT", "GND"], "ERJPW9umgcywrDFneiBThL"], [["3ubtWvp3hBcYgGS5rMRyyT", "PINNAME4"], "56xjhHHh56SBGTA7wfNQRV"], [["3ubtWvp3hBcYgGS5rMRyyT", "PINNAME2"], "GEug8SiyZu7MQVrX4PGasL"], [["1114VuAvHNgLD5Rkx8Vpm", "support-pin"], "1111111111113NGn7J"]],
+		"instance-ids":	[{
+				"id":	"9WdwGntCsG7pmNfUHzUoHr",
+				"unit-id":	0
+			}],
+		"group-ids":	[null],
+		"pin-ids":	[],
+		"pure-netlist":	{
+			"instances":	[{
+					"id":	0,
+					"group":	0
+				}],
+			"nets":	[]
+		},
+		"require-pin-name-by-stable-id":	[],
+		"input":	{
+			"paper-size":	{
+				"x":	145,
+				"y":	72
+			},
+			"label-font-size":	0.8,
+			"boxes":	[{
+					"id":	51796,
+					"sw":	{
+						"x":	-10,
+						"y":	-8
+					},
+					"ne":	{
+						"x":	10,
+						"y":	8
+					},
+					"ports":	[{
+							"id":	120632,
+							"pt":	{
+								"x":	-10,
+								"y":	1
+							},
+							"dir":	"Left",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120633,
+							"pt":	{
+								"x":	-10,
+								"y":	-1
+							},
+							"dir":	"Left",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120634,
+							"pt":	{
+								"x":	10,
+								"y":	1
+							},
+							"dir":	"Right",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120635,
+							"pt":	{
+								"x":	10,
+								"y":	-1
+							},
+							"dir":	"Right",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120636,
+							"pt":	{
+								"x":	0,
+								"y":	8
+							},
+							"dir":	"Up",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120637,
+							"pt":	{
+								"x":	0,
+								"y":	-8
+							},
+							"dir":	"Down",
+							"tag":	"AnyTag"
+						}],
+					"orientation":	{
+						"type":	"prefer-rotation",
+						"rotations":	[0]
+					}
+				}, {
+					"id":	51789,
+					"sw":	{
+						"x":	-10,
+						"y":	-8
+					},
+					"ne":	{
+						"x":	10,
+						"y":	8
+					},
+					"ports":	[{
+							"id":	120625,
+							"pt":	{
+								"x":	-10,
+								"y":	1
+							},
+							"dir":	"Left",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120626,
+							"pt":	{
+								"x":	-10,
+								"y":	-1
+							},
+							"dir":	"Left",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120627,
+							"pt":	{
+								"x":	10,
+								"y":	1
+							},
+							"dir":	"Right",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120628,
+							"pt":	{
+								"x":	10,
+								"y":	-1
+							},
+							"dir":	"Right",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120629,
+							"pt":	{
+								"x":	0,
+								"y":	8
+							},
+							"dir":	"Up",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120630,
+							"pt":	{
+								"x":	0,
+								"y":	-8
+							},
+							"dir":	"Down",
+							"tag":	"AnyTag"
+						}],
+					"orientation":	{
+						"type":	"prefer-rotation",
+						"rotations":	[0]
+					}
+				}, {
+					"id":	51799,
+					"sw":	{
+						"x":	-3,
+						"y":	0
+					},
+					"ne":	{
+						"x":	3,
+						"y":	1
+					},
+					"ports":	[{
+							"id":	120639,
+							"pt":	{
+								"x":	-3,
+								"y":	0
+							},
+							"dir":	"Left",
+							"tag":	"AnyTag"
+						}, {
+							"id":	120640,
+							"pt":	{
+								"x":	3,
+								"y":	0
+							},
+							"dir":	"Right",
+							"tag":	"AnyTag"
+						}],
+					"orientation":	{
+						"type":	"any-rotation"
+					}
+				}],
+			"insts":	[{
+					"id":	51800,
+					"box":	51796,
+					"group":	null
+				}],
+			"nets":	[],
+			"shorts":	[],
+			"schematic-group-order":	[]
+		}
+	},
+	"stable-board-to-box-layout-id-mapping":	{
+		"boxes":	[[{
+					"id":	"3ubtWvp3hBcYgGS5rMRyyT",
+					"unit-id":	0
+				}, 51796], [{
+					"id":	"1114VuAvHNgLD5Rkx8Vpm",
+					"unit-id":	0
+				}, 51799], [{
+					"id":	"4vW671QeM413K3LfF5ZdPB",
+					"unit-id":	0
+				}, 51789]],
+		"inst-boxes":	[[{
+					"id":	"9WdwGntCsG7pmNfUHzUoHr",
+					"unit-id":	0
+				}, 51800]],
+		"nets":	[],
+		"ports":	[["9TSmgFFRtKnTf3EzxENuPt", 120633], ["GEug8SiyZu7MQVrX4PGasL", 120634], ["11111111111bpvQib", 120628], ["11111111111PpRPMi", 120626], ["11111111111AikgkC", 120640], ["3ZUrBwd4bPjw1zaDyrWiPy", 120632], ["6B5VwAJH3ACYZH7oe9X9HE", 120636], ["ERJPW9umgcywrDFneiBThL", 120637], ["11111111111hjqKAa", 120629], ["56xjhHHh56SBGTA7wfNQRV", 120635], ["11111111111oNFJWX", 120630], ["11111111111GdLgYG", 120625], ["1111111111113NGn7J", 120639], ["11111111111UmmXhg", 120627]]
+	},
+	"output":	{
+		"sheets":	[{
+				"id":	120643,
+				"title":	null,
+				"schematic-groups":	[{
+						"id":	51801,
+						"ref":	null,
+						"children":	[],
+						"output":	{
+							"inst-placements":	[{
+									"inst":	51800,
+									"pose":	{
+										"center":	{
+											"x":	72,
+											"y":	36
+										},
+										"angle":	0,
+										"flip-x?":	false
+									}
+								}],
+							"nets":	[]
+						},
+						"border":	{
+							"x1":	60,
+							"y1":	26,
+							"x2":	84,
+							"y2":	46
+						},
+						"origin":	{
+							"x":	0,
+							"y":	0
+						},
+						"partial-island-nets":	[],
+						"external-ports-by-net-id":	[],
+						"high-level-nets":	[]
+					}]
+			}],
+		"hierarchical-diagram":	null,
+		"partial-group-nets":	[]
+	}
+}
